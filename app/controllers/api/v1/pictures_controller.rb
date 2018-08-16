@@ -2,7 +2,7 @@ class Api::V1::PicturesController < ApplicationController
   def index
     @pictures = Picture.all
 
-    render json: /pictures
+    render json: @pictures, status: 200
   end
 
   # GET /pictures/1
@@ -13,10 +13,10 @@ class Api::V1::PicturesController < ApplicationController
 
   # POST /pictures
   def create
-    @picture = Picture.find_or_create_by(name: params[:name], location: params[:location], bio: params[:bio] )
+    @picture = Picture.find_or_create_by(title: params[:title], url: params[:url], artist_id: params[:artist_id] )
 
     if @picture.save
-      render json: @picture.formatted_json, status: :created
+      render json: @picture.formatted_json, status: 200
     else
       render json: @picture.errors, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class Api::V1::PicturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def picture_params
-      params.require(:picture).permit(:title, :description)
+      params.require(:picture).permit(:title, :url, :description)
     end
 
 end

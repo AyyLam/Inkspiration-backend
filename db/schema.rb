@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2018_08_08_194705) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.string "username"
+    t.string "password_digest"
     t.string "location"
     t.string "bio"
     t.datetime "created_at", null: false
@@ -26,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_08_194705) do
   create_table "pictures", force: :cascade do |t|
     t.string "title"
     t.string "url"
-    t.string "description"
+    t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
