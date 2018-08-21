@@ -9,7 +9,7 @@ class Api::V1::ArtistsController < ApplicationController
   # GET /artists/1
   def show
     @artist = Artist.find(params[:id])
-    render json: @artist.formatted_json
+    render json: @artist
   end
 
   # POST /artists

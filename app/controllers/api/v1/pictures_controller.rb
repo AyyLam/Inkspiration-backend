@@ -8,7 +8,7 @@ class Api::V1::PicturesController < ApplicationController
   # GET /pictures/1
   def show
     @picture = Picture.find(params[:id])
-    render json: @picture.formatted_json
+    render json: @picture
   end
 
   # POST /pictures
