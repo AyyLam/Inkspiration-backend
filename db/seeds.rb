@@ -10,22 +10,27 @@ artists = Artist.create(
     {
       name: 'Woo Loves You',
       location: 'Korea',
-      bio: "IMMA GOD"
+      bio: "I love people!"
     },
     {
       name: 'Jason Lud',
       location: 'Queens',
-      bio: "IMMA SUPAGOD"
+      bio: "Youngest artist out there"
     },
     {
       name: 'Yui',
       location: 'NYC',
-      bio: " GOD"
+      bio: "I love drawing"
     },
     {
       name: 'Jeon',
       location: 'Korea',
-      bio: "A GOD"
+      bio: "Best in Korea"
+    },
+    {
+      name: 'Anthony',
+      location: 'New York',
+      bio: "A great artist"
     }
   ]
 )

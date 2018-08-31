@@ -14,8 +14,7 @@ class Api::V1::PicturesController < ApplicationController
   # POST /pictures
   def create
     @picture = Picture.find_or_create_by(title: params[:title], url: params[:url], artist_id: params[:artist_id] )
-
-    if @picture.save
+    if @picture.save!
       render json: @picture, status: 200
     else
       render json: @picture.errors, status: :unprocessable_entity
