@@ -14,10 +14,9 @@ class Api::V1::ArtistsController < ApplicationController
 
   # POST /artists
   def create
-    @artist = Artist.find_or_create_by(username: params[:username], name: params[:name], location: params[:location], bio: params[:bio] )
-
+    @artist = Artist.create(username: params[:username], name: params[:name], password: params[:password] )
     if @artist.save
-      render json: @artist.formatted_json, status: :created
+      render json: { token: issue_token({ id: @artist.id }) }
     else
       render json: @artist.errors, status: :unprocessable_entity
     end
@@ -47,5 +46,4 @@ class Api::V1::ArtistsController < ApplicationController
     def artist_params
       params.require(:artist).permit(:name, :username, :password_digest, :location, :bio)
     end
-
 end
