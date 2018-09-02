@@ -9,26 +9,36 @@ artists = Artist.create(
   [
     {
       name: 'Woo Loves You',
+      username: 'Woo',
+      password: '123',
       location: 'Korea',
       bio: "I love people!"
     },
     {
       name: 'Jason Lud',
+      username: 'JasonLQ',
+      password: '123',
       location: 'Queens',
       bio: "Youngest artist out there"
     },
     {
       name: 'Yui',
+      username: 'YuiMoo',
+      password: '123',
       location: 'NYC',
       bio: "I love drawing"
     },
     {
       name: 'Jeon',
+      username: 'JeonKor',
+      password: '123',
       location: 'Korea',
       bio: "Best in Korea"
     },
     {
       name: 'Anthony',
+      username: 'AntonioBoy',
+      password: '123',
       location: 'New York',
       bio: "A great artist"
     }
