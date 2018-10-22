@@ -6,6 +6,6 @@ class Artist < ApplicationRecord
   validates :username, uniqueness: true
   validates :name, length: {maximum: 30}
   validates :username, length: {maximum: 70}
-  validates :password, length: {maximum: 30}
+  validates :password, length: {maximum: 70}
 
 end
